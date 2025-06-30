@@ -8,16 +8,22 @@ RUN apt-get update && \
         gcc && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR /api
+# Directorio de trabajo dentro del contenedor (ajusta si es necesario)
+WORKDIR /app
 
+# Copia requerimientos y los instala primero (mejor para caché)
 COPY requerimientos.txt .
+
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requerimientos.txt
 
+# Copia el resto del código al contenedor
 COPY . .
 
 # Cambia el directorio de trabajo a donde está manage.py
-WORKDIR /api/test_api
+# Si tu manage.py está en /app, no cambies el WORKDIR
+# Si está en /app/testv, cambia el WORKDIR a /app/testv
+WORKDIR /app
 
 EXPOSE 8000
 
