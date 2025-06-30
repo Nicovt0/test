@@ -12,7 +12,7 @@ RUN apt-get update && \
 WORKDIR /api
 
 # Copia requerimientos y los instala primero (mejor para caché)
-COPY testv/requerimientos.txt .
+COPY requerimientos.txt .
 
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requerimientos.txt
@@ -23,7 +23,7 @@ COPY . .
 # Cambia el directorio de trabajo a donde está manage.py
 # Si tu manage.py está en /app, no cambies el WORKDIR
 # Si está en /app/testv, cambia el WORKDIR a /app/testv
-WORKDIR /api/testv
+WORKDIR cd /api/testv
 
 EXPOSE 8000
 
