@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-uei+$)id)c=!^oi_i3v@y4+$yhm89=_pgfp(=t+=vvogmcgco6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['54.81.111.245']
+#54.81.111.245
 
 # Application definition
 
