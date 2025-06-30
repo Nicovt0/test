@@ -1,0 +1,9 @@
+# Entorno virtual
+venv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+
+# Archivos de configuración de VSCode
+.vscode/

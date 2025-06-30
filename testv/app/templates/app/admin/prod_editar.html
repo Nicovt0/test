@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link href="{% static 'app/prod_editar.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="navbar-title"><b>Panel de Administrador</b></span>
+        <div class="navbar-profile">
+            <span class="navbar-username">Juan Pérez</span>
+            <a class="logout-btn" href="{% url 'login' %}">Cerrar sesión</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="volver">
+            <a href="{% url 'detalleproveedor' id_proveedor %}" class="volver-link">&larr; Volver al Proveedor</a>
+        </div>
+
+        <div class="container">
+            <h1>Editar Producto</h1>
+            {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+            <form class="product-form" method="post">
+                {% csrf_token %}
+                <input type="text" name="nombre" class="input" placeholder="Nombre" value="{{ producto.nombre_producto }}" required>
+                <textarea name="descripcion" class="input textarea" placeholder="Descripción" required>{{ producto.descripcion }}</textarea>
+                <input type="number" name="precio" class="input" placeholder="Precio" value="{{ producto.precio }}" required>
+                <select class="input" id="marca" name="marca" required>
+                    <option value="" disabled>Selecciona una Marca</option>
+                    {% for marca in marcas %}
+                        <option value="{{ marca.id_marca }}" {% if marca.id_marca == producto.id_marca %}selected{% endif %}>{{ marca.nombre_marca }}</option>
+                    {% endfor %}
+                </select>
+                <select class="input" id="tipo" name="tipo" required>
+                    <option value="" disabled>Selecciona un Tipo</option>
+                    {% for tipo in tipos %}
+                        <option value="{{ tipo.id_tipo }}" {% if tipo.id_tipo == producto.id_tipo %}selected{% endif %}>{{ tipo.nombre_tipo }}</option>
+                    {% endfor %}
+                </select>
+                <div class="input readonly-field">
+                    <label class="label-id">ID Proveedor</label>
+                    <div class="id-value">PROV-{{ id_proveedor }}</div>
+                </div>
+                <button type="submit" class="btn-primary">Editar Producto</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,289 @@
+/* Fuente y fondo general */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fafbfc;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Barra de navegación superior */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 2px solid #f0f0f0;
+  padding: 12px 18px;
+  box-sizing: border-box;
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-username {
+  font-size: 1rem;
+  color: #111;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.logout-btn {
+  padding: 6px 16px;
+  background: #db1616d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.logout-btn:hover {
+  background: #ff1919;
+}
+
+/* Enlace de volver */
+.volver {
+  display: flex;
+  align-items: center;
+  margin: 24px 0 0 32px;
+  font-size: 16px;
+}
+
+.volver-link {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s;
+}
+.volver-link:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor principal */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* Card principal de proveedor */
+.main-card {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 4px 18px 0 rgba(60, 72, 88, 0.09);
+  padding: 36px 38px 38px 38px;
+  margin: 36px auto 0 auto;
+  max-width: 95vw;
+  width: 92%;
+  min-width: 350px;
+}
+
+.main-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-card-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #14181e;
+}
+
+.proveedor-id {
+  color: #888;
+  font-size: 1.07em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.productos-title {
+  font-size: 1.18em;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+}
+
+/* Grid de productos */
+.productos-grid {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card de producto */
+.card-producto {
+  background: #f5faff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px 0 rgba(60, 72, 88, 0.09);
+  min-width: 270px;
+  width: 320px;
+  max-width: 97vw;
+  min-height: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 14px 28px 14px;
+  position: relative;
+  transition: box-shadow 0.15s, transform 0.14s;
+}
+
+.card-producto:hover {
+  box-shadow: 0 8px 28px 0 rgba(60, 72, 88, 0.13);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #181c21;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Contenedor de acciones (botones) en la card */
+.acciones-producto {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+/* Botón/enlace ver detalles */
+.ver-detalles {
+  background: #bedeff;
+  color: #2366bf;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+  margin: 0 auto;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+}
+.ver-detalles:hover {
+  background: #b4d1fb;
+}
+
+/* Botón editar */
+.btn-editar {
+  background: #f7e9be;
+  color: #c29713;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+.btn-editar:hover {
+  background: #fae7a3;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+  background: #ffd6db;
+  color: #d5253c;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+.btn-eliminar:hover {
+  background: #ffbfc7;
+}
+
+/* Card especial para crear producto */
+.card-crear-producto {
+  background: #d7fbe4;
+  border: none;
+  box-shadow: 0 4px 18px 0 rgba(90, 210, 130, 0.11);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.15s, background 0.14s;
+}
+
+.card-crear-producto:hover {
+  background: #c2f7d6;
+  box-shadow: 0 8px 28px 0 rgba(90, 210, 130, 0.17);
+}
+
+.icono-mas {
+  font-size: 2.7em;
+  color: #17a44b;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crear-texto {
+  display: block;
+  color: #17613b;
+  font-size: 1.14em;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .main-card {
+    padding: 28px 8px 28px 8px;
+  }
+  .productos-grid {
+    gap: 16px;
+  }
+  .card-producto {
+    width: 98vw;
+    min-width: 160px;
+    max-width: 97vw;
+  }
+}
+@media (max-width: 900px) {
+  .productos-grid {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .main-card {
+    width: 99vw;
+    padding: 12px 2vw 16px 2vw;
+  }
+  .card-producto {
+    min-width: 150px;
+    width: 89vw;
+    max-width: 98vw;
+  }
+}

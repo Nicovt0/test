@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Proveedor</title>
+    <link href="{% static 'app/prod_crear.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="navbar-title"><b>Panel de Administrador</b></span>
+        <div class="navbar-profile">
+            <span class="navbar-username">Juan Pérez</span>
+            <a class="logout-btn" href="{% url 'login' %}">Cerrar sesión</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="volver">
+            <a href="{% url 'admin2' %}" class="volver-link">&larr; Volver al Panel</a>
+        </div>
+
+        <div class="container">
+            <h1>Crear Nuevo Proveedor</h1>
+            {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+            <form class="product-form" method="post">
+                {% csrf_token %}
+                <input type="email" name="correo" class="input" placeholder="Correo" required>
+                <input type="text" name="nombre" class="input" placeholder="Nombre" required>
+                <input type="text" name="apellido" class="input" placeholder="Apellido" required>
+                <input type="text" name="telefono" class="input" placeholder="Teléfono" required>
+                <input type="number" name="rut" class="input" placeholder="RUT" required>
+                <input type="text" name="dv" class="input" placeholder="DV" maxlength="1" required>
+                <input type="text" name="nombre_empresa" class="input" placeholder="Nombre Empresa" required>
+                <input type="text" name="pais_empresa" class="input" placeholder="País Empresa" required>
+                <input type="number" name="rut_empresa" class="input" placeholder="RUT Empresa" required>
+                <input type="number" name="puntuacion" class="input" placeholder="Puntuación" min="0" max="100" value="0">
+                <button type="submit" class="btn-primary">Crear Proveedor</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalles del Producto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'app/detalleproducto.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="navbar-title"><b>Panel de Administrador</b></span>
+        <div class="navbar-profile">
+            <span class="navbar-username">Juan Pérez</span>
+            <a class="logout-btn" href="{% url 'login' %}">Cerrar sesión</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="volver">
+            {% if id_proveedor %}
+                <a href="{% url 'detalleproveedor' id_proveedor %}" class="volver-link">&larr; Volver al Proveedor</a>
+            {% else %}
+                <span class="volver-link">No se pudo obtener el proveedor</span>
+            {% endif %}
+        </div>
+        {% if producto %}
+        <div class="detalle-card">
+            <h2>Detalles del Producto: {{ producto.nombre_producto }}</h2>
+            <p><b>Nombre:</b> {{ producto.nombre_producto }}</p>
+            <p><b>Descripción:</b> {{ producto.descripcion }}</p>
+            <p><b>Precio:</b> ${{ producto.precio }}</p>
+            <p><b>Marca:</b> {{ marca_nombre }}</p>
+            <p><b>Tipo:</b> {{ tipo_nombre }}</p>
+            <p><b>ID Proveedor:</b> PROV-{{ producto.id_proveedor }}</p>
+        </div>
+        {% else %}
+        <div class="detalle-card">
+            <h2>No se encontró el producto.</h2>
+        </div>
+        {% endif %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles de la Orden: {{ orden.codigo }}</title>
+    <link rel="stylesheet" href="{% static 'app/detalleorden.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="navbar-title"><b>Panel de Administrador</b></span>
+        <div class="navbar-profile">
+            <span class="navbar-username">Juan Pérez</span>
+            <button class="logout-btn">Cerrar sesión</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="volver">
+            <a href="{% url 'proveedor' %}" class="volver-link">&larr; Volver al Proveedor</a>
+        </div>
+
+        {% if orden %}
+        <div class="order-details-card">
+            <div class="order-details-header">
+                <h2>Detalles de la Orden: {{ orden.codigo }}</h2>
+                <span class="order-status {{ orden.estado|lower|cut:' ' }}">{{ orden.estado|title }}</span>
+            </div>
+            <div>
+                <strong>Correo:</strong> {{ orden.proveedor.correo }}<br>
+                <strong>Fecha:</strong> {{ orden.fecha }}<br>
+            </div>
+            <table class="order-details-table" style="margin-top: 20px;">
+                <thead>
+                <tr>
+                    <th>PRODUCTO</th>
+                    <th>CANTIDAD</th>
+                    <th>PRECIO UNITARIO</th>
+                    <th>SUBTOTAL</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for producto in orden.productos %}
+                <tr>
+                    <td>{{ producto.producto }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td>{{ producto.precio_unitario }}</td>
+                    <td>{{ producto.subtotal }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <p>No se pudo cargar la orden.</p>
+        {% endif %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'app/login.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <span class="navbar-title"><b>Inicio de sesion</b></span>
+        <div class="navbar-profile">
+            <a href="{% url 'proveedor' %}">Prueba con proveedor</a>
+            <a href="{% url 'admin2' %}">Prueba con admin</a>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-title">Login</div>
+        <form>
+        <label class="login-label" for="username">Username</label>
+        <input class="login-input" type="text" id="username" name="username" autocomplete="username" required>
+        
+        <label class="login-label" for="password">Password</label>
+        <input class="login-input" type="password" id="password" name="password" autocomplete="current-password" required>
+        
+        <div class="login-role-group">
+            <label>
+            <input class="login-radio" type="radio" name="role" value="admin" required>
+            <span class="login-role-label">Admin</span>
+            </label>
+            <label>
+            <input class="login-radio" type="radio" name="role" value="proveedor" required>
+            <span class="login-role-label">Proveedor</span>
+            </label>
+        </div>
+        <button class="login-btn" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

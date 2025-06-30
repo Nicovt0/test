@@ -1,0 +1,133 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fafbfc;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 2px solid #f0f0f0;
+  padding: 12px 18px;
+  box-sizing: border-box;
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+.navbar-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-username {
+  font-size: 1rem;
+  color: #111;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.logout-btn {
+  padding: 6px 16px;
+  background: #db1616d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.logout-btn:hover {
+  background: #ff1919;
+}
+
+/*----------------------------------------------------------*/
+  
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+  
+  main h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+  
+  .providers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  
+  .provider-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(30,30,30,0.08);
+    padding: 24px 26px 18px 26px;
+    min-width: 300px;
+    max-width: 340px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .provider-title {
+    font-size: 1.18rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .provider-id {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 14px;
+  }
+  
+  .provider-status {
+    display: inline-block;
+    padding: 4px 18px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 17px;
+  }
+  
+  .provider-status.active {
+    background: #c7f8d7;
+    color: #338650;
+  }
+  
+  .provider-status.inactive {
+    background: #f9c6d0;
+    color: #c13d52;
+  }
+  
+  .provider-status.pending {
+    background: #f6e7cb;
+    color: #a98338;
+  }
+  
+  .provider-link {
+    color: #2267d3;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: auto;
+    font-weight: 500;
+  }
+  
+  .provider-link:hover {
+    text-decoration: underline;
+  }
