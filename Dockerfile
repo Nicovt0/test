@@ -23,7 +23,7 @@ COPY . .
 # Cambia el directorio de trabajo a donde está manage.py
 # Si tu manage.py está en /app, no cambies el WORKDIR
 # Si está en /app/testv, cambia el WORKDIR a /app/testv
-WORKDIR /api/testv
+WORKDIR /api/test
 
 EXPOSE 8000
 
