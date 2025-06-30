@@ -12,7 +12,7 @@ RUN apt-get update && \
 WORKDIR /api
 
 # Copia requerimientos y los instala primero (mejor para caché)
-COPY requerimientos.txt .
+COPY testv/requerimientos.txt .
 
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requerimientos.txt
