@@ -53,7 +53,9 @@ jobs:
               exit 1
             fi
 
+            cd testv
             sudo docker build -t mybank_image .
+            cd ..
             sudo docker run -d \
               --name mybank_container \
               -p 80:8000 \
